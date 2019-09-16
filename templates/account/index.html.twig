@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accounts{% endblock %}
+
+{% block body %}
+    <h1>Accounts</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>AccountName</th>
+                <th>AccountType</th>
+                <th>Phone</th>
+                <th>OtherPhone</th>
+                <th>Email1</th>
+                <th>Email2</th>
+                <th>Website</th>
+                <th>Fax</th>
+                <th>BillingCity</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for account in accounts %}
+            <tr>
+                <td>{{ account.id }}</td>
+                <td>{{ account.accountName }}</td>
+                <td>{{ account.accountType }}</td>
+                <td>{{ account.phone }}</td>
+                <td>{{ account.otherPhone }}</td>
+                <td>{{ account.email1 }}</td>
+                <td>{{ account.email2 }}</td>
+                <td>{{ account.website }}</td>
+                <td>{{ account.fax }}</td>
+                <td>{{ account.billingCity }}</td>
+                <td>
+                    <a href="{{ path('account_show', {'id': account.id}) }}"><i class="far fa-eye"></i> </a>
+                    <a href="{{ path('account_edit', {'id': account.id}) }}"><i class="far fa-edit"></i> </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="16">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('account_new') }}">Create new</a>
+{% endblock %}

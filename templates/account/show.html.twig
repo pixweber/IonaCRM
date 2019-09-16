@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Account{% endblock %}
+
+{% block body %}
+    <h1>Account</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ account.id }}</td>
+            </tr>
+            <tr>
+                <th>AccountName</th>
+                <td>{{ account.accountName }}</td>
+            </tr>
+            <tr>
+                <th>AccountType</th>
+                <td>{{ account.accountType }}</td>
+            </tr>
+            <tr>
+                <th>Industry</th>
+                <td>{{ account.industry }}</td>
+            </tr>
+            <tr>
+                <th>AnnualRevenue</th>
+                <td>{{ account.annualRevenue }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ account.phone }}</td>
+            </tr>
+            <tr>
+                <th>OtherPhone</th>
+                <td>{{ account.otherPhone }}</td>
+            </tr>
+            <tr>
+                <th>Email1</th>
+                <td>{{ account.email1 }}</td>
+            </tr>
+            <tr>
+                <th>Email2</th>
+                <td>{{ account.email2 }}</td>
+            </tr>
+            <tr>
+                <th>Website</th>
+                <td>{{ account.website }}</td>
+            </tr>
+            <tr>
+                <th>Fax</th>
+                <td>{{ account.fax }}</td>
+            </tr>
+            <tr>
+                <th>BillingStreet</th>
+                <td>{{ account.billingStreet }}</td>
+            </tr>
+            <tr>
+                <th>BillingCity</th>
+                <td>{{ account.billingCity }}</td>
+            </tr>
+            <tr>
+                <th>BillingZipcode</th>
+                <td>{{ account.billingZipcode }}</td>
+            </tr>
+            <tr>
+                <th>BillingCountry</th>
+                <td>{{ account.billingCountry }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('account_index') }}">back to list</a>
+
+    <a href="{{ path('account_edit', {'id': account.id}) }}">edit</a>
+
+    {{ include('account/_delete_form.html.twig') }}
+{% endblock %}
