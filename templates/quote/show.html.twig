@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quote{% endblock %}
+
+{% block body %}
+    <h1>Quote</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ quote.id }}</td>
+            </tr>
+            <tr>
+                <th>ValidUntil</th>
+                <td>{{ quote.validUntil ? quote.validUntil|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Subject</th>
+                <td>{{ quote.subject }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ quote.status }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ quote.description }}</td>
+            </tr>
+            <tr>
+                <th>Subtotal</th>
+                <td>{{ quote.subtotal }}</td>
+            </tr>
+            <tr>
+                <th>Adjustment</th>
+                <td>{{ quote.adjustment }}</td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td>{{ quote.total }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('quote_index') }}">back to list</a>
+
+    <a href="{{ path('quote_edit', {'id': quote.id}) }}">edit</a>
+
+    {{ include('quote/_delete_form.html.twig') }}
+{% endblock %}

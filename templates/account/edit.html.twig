@@ -3,11 +3,33 @@
 {% block title %}Edit Account{% endblock %}
 
 {% block body %}
-    <h1>Edit Account</h1>
+    <div class="row">
+        <div class="col-sm-6">
+            <h1><i class="far fa-building"></i> Edit Account</h1>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-3">
+                </div>
+                <div class="col-sm-5">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            {{ include('account/_delete_form.html.twig') }}
+                        </div>
+                        <div class="col-sm-4">
+                            <a class="btn btn-sm btn-secondary rounded-pill btn-block" href="{{ path('account_index') }}"><i class="fas fa-times pr-1"></i> Cancel</a>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="submit" form="account-form" class="btn rounded-pill btn-success btn-sm mb-3 btn-block"><i class="far fa-save pr-1"></i> {{ button_label|default('Save') }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    {{ include('account/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('account/_form.html.twig') }}
 
-    <a href="{{ path('account_index') }}">back to list</a>
-
-    {{ include('account/_delete_form.html.twig') }}
 {% endblock %}

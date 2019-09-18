@@ -2,13 +2,16 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ContactRepository")
  */
-class Contact
-{
+class Contact {
+
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -50,6 +53,22 @@ class Contact
      * @ORM\ManyToOne(targetEntity="App\Entity\Account", inversedBy="contacts")
      */
     private $account;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="contacts")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $owner;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Quote", mappedBy="contact")
+     */
+    private $quotes;
+
+    public function __construct()
+    {
+        $this->quotes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -138,5 +157,55 @@ class Contact
         $this->account = $account;
 
         return $this;
+    }
+
+    public function getOwner(): ?User
+    {
+        return $this->owner;
+    }
+
+    public function setOwner(?User $owner): self
+    {
+        $this->owner = $owner;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Quote[]
+     */
+    public function getQuotes(): Collection
+    {
+        return $this->quotes;
+    }
+
+    public function addQuote(Quote $quote): self
+    {
+        if (!$this->quotes->contains($quote)) {
+            $this->quotes[] = $quote;
+            $quote->setContact($this);
+        }
+
+        return $this;
+    }
+
+    public function removeQuote(Quote $quote): self
+    {
+        if ($this->quotes->contains($quote)) {
+            $this->quotes->removeElement($quote);
+            // set the owning side to null (unless already changed)
+            if ($quote->getContact() === $this) {
+                $quote->setContact(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString() {
+        return $this->getLastName() . ' ' . $this->getFirstName();
     }
 }

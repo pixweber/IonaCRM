@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Users{% endblock %}
+
+{% block body %}
+    <h1>User index</h1>
+
+    <table class="table bg-white border">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Enabled</th>
+                <th>Salt</th>
+                <th>LastLogin</th>
+                <th>Roles</th>
+                <th>Id</th>
+                <th>Phone</th>
+                <th>Mobile</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.enabled ? 'Yes' : 'No' }}</td>
+                <td>{{ user.salt }}</td>
+                <td>{{ user.lastLogin ? user.lastLogin|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ user.roles ? user.roles|join(', ') : '' }}</td>
+                <td>{{ user.id }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.mobile }}</td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>
+                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="17">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_new') }}">Create new</a>
+{% endblock %}

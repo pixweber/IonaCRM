@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quotes{% endblock %}
+
+{% block body %}
+    <h1>Quotes</h1>
+
+    <table class="table bg-white border">
+        <thead>
+            <tr>
+                <th>Id</th>itemsitem
+                <th>ValidUntil</th>
+                <th>Subject</th>
+                <th>Status</th>
+                <th>Description</th>
+                <th>Subtotal</th>
+                <th>Adjustment</th>
+                <th>Total</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for quote in quotes %}
+            <tr>
+                <td>{{ quote.id }}</td>
+                <td>{{ quote.validUntil ? quote.validUntil|date('Y-m-d') : '' }}</td>
+                <td>{{ quote.subject }}</td>
+                <td>{{ quote.status }}</td>
+                <td>{{ quote.description }}</td>
+                <td>{{ quote.subtotal }}</td>
+                <td>{{ quote.adjustment }}</td>
+                <td>{{ quote.total }}</td>
+                <td>
+                    <a href="{{ path('quote_show', {'id': quote.id}) }}">show</a>
+                    <a href="{{ path('quote_edit', {'id': quote.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('quote_new') }}">Create new</a>
+{% endblock %}

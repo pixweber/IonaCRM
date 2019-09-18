@@ -1,0 +1,7 @@
+.form-control {
+    height: calc(1.5em + .55rem + 2px) !important;
+}
+
+.col-form-label {
+    font-weight: bold !important;
+}

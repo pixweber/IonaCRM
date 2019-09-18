@@ -1,0 +1,140 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Quote{% endblock %}
+
+{% block body %}
+    <h1>Create new Quote</h1>
+
+    {{ form_start(form) }}
+    <div class="bg-white border p-3">
+
+        <h3>Quote details</h3>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    {{ form_label(form.client, null, {'label_attr': {'class': 'col-sm-4 col-form-label text-right'}})}}
+                    <div class="col-sm-8">{{ form_widget(form.client) }}</div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    {{ form_label(form.owner, null, {'label_attr': {'class': 'col-sm-4 col-form-label text-right'}})}}
+                    <div class="col-sm-8">{{ form_widget(form.owner) }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    {{ form_label(form.subject, null, {'label_attr': {'class': 'col-sm-4 col-form-label text-right'}})}}
+                    <div class="col-sm-8">{{ form_widget(form.subject) }}</div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    {{ form_label(form.status, null, {'label_attr': {'class': 'col-sm-4 col-form-label text-right'}})}}
+                    <div class="col-sm-8">{{ form_widget(form.status) }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    {{ form_label(form.description, null, {'label_attr': {'class': 'col-sm-4 col-form-label text-right'}})}}
+                    <div class="col-sm-8">{{ form_widget(form.description) }}</div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group row">
+                    {{ form_label(form.validUntil, null, {'label_attr': {'class': 'col-sm-4 col-form-label text-right'}})}}
+                    <div class="col-sm-8">{{ form_widget(form.validUntil) }}</div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <a href="{{ path('quote_index') }}">back to list</a>
+    </div>
+
+    <div class="bg-white border p-3 mt-4">
+        <h3>Quote items</h3>
+        <div id="details" data-prototype="{{ form_widget(form.quoteLineItems.vars.prototype) | e }}">
+        </div>
+
+        {% for quoteLineItem in form.quoteLineItems %}
+            {{ form_widget(quoteLineItem) }}
+        {% endfor %}
+
+        <a id="addDetail" href="" class="btn btn-success btn-md">Add</a>
+    </div>
+
+    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+
+    {% block javascripts %}
+    <script type="text/javascript">
+        // Récupère le div qui contient la collection de tags
+        var collectionHolderDetails = $('#details');
+        var $addDetailButton = $("#addDetail");
+
+        jQuery(document).ready(function () {
+            var i = 0;
+            var j = 0;
+            $("tr.detail").each(function () {
+                addDeleteButton(this);
+            });
+
+
+            $addDetailButton.on('click', function (e) {
+                // empêche le lien de créer un « # » dans l'URL
+                e.preventDefault();
+
+                // ajoute un nouveau formulaire detail (voir le prochain bloc de code)
+                addTagForm(collectionHolderDetails, i, 'detail');
+                i++;
+            });
+
+        });
+
+
+        function addTagForm(collectionHolder, i, type) {
+            // Récupère l'élément ayant l'attribut data-prototype comme expliqué plus tôt
+            var prototype = collectionHolder.attr('data-prototype');
+
+            // Remplace '__name__' dans le HTML du prototype par un nombre basé sur
+            // la longueur de la collection courante
+            var newForm = prototype.replace(/__name__/g, collectionHolderDetails.children().first().children().length);
+            newForm = '<div id="' + type + i + '">' + newForm + '</div>';
+
+            // Affiche le formulaire dans la page dans un li, avant le lien "ajouter un tag"
+            var $newForm = collectionHolder.append(newForm);
+            addDeleteButton($('#' + type + i));
+
+        }
+
+
+        function addDeleteButton($tag) {
+            var $delete = $('<button class="btn btn-delete">X</button>');
+            $($tag).children().first().append($delete);
+
+            $delete.on('click', function (e) {
+                // prevent the link from creating a "#" on the URL
+                e.preventDefault();
+
+                //CONFIRM confirmation suppression
+                var message = "Êtes vous sûr de vouloir supprimer cette ligne ?";
+                bootbox.confirm(message, function (result) {
+                    if (result) {
+                        $tag.remove();
+                    }
+                });
+            });
+
+        }
+    </script>
+    {% endblock %}
+{% endblock %}
