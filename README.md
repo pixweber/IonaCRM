@@ -32,7 +32,5 @@ Step 1: clone the repository
 
 Step 2: install project dependencies with Composer
 
-`cd IonaCRM`
-
+`cd IonaCRM`\
 `composer install`
-
