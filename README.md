@@ -23,7 +23,10 @@ System
 + Multi language support
 
 ## Demo
-Coming soon
+http://ionacrm.herokuapp.com/
+
+Username: admin\
+Password: admin
 
 ## Installation
 
