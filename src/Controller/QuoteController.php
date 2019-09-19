@@ -3,12 +3,14 @@
 namespace App\Controller;
 
 use App\Entity\Quote;
+use App\Form\QuoteLineItemType;
 use App\Form\QuoteType;
 use App\Repository\QuoteRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @Route("/quote")
@@ -61,20 +63,37 @@ class QuoteController extends AbstractController
     /**
      * @Route("/{id}/edit", name="quote_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Quote $quote): Response
-    {
+    public function edit(Request $request, Quote $quote): Response {
+
+        $entityManager = $this->getDoctrine()->getManager();
         $form = $this->createForm(QuoteType::class, $quote);
-        $form->handleRequest($request);
+        $quoteLineItemForm = $this->createForm(QuoteLineItemType::class);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+        if ($request->getMethod() === 'POST' ) {
 
-            return $this->redirectToRoute('quote_index');
+            $form->handleRequest($request);
+
+            if ($form->isSubmitted() && $form->isValid()) {
+
+                foreach ($quote->getQuoteLineItems() as $quoteLineItem) {
+                    $quoteLineItem->setQuote($quote);
+                }
+
+                $entityManager->persist($quote);
+                $entityManager->flush();
+
+                $this->addFlash('success', 'Quoted saved');
+
+                return $this->redirectToRoute('quote_index', array(
+                    'id' => $quote->getId()
+                ));
+            }
         }
 
         return $this->render('quote/edit.html.twig', [
             'quote' => $quote,
             'form' => $form->createView(),
+            'quoteLineItemForm' => $quoteLineItemForm->createView()
         ]);
     }
 

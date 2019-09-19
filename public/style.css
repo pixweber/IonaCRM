@@ -5,3 +5,11 @@
 .col-form-label {
     font-weight: bold !important;
 }
+
+.detail.row {
+    padding: 20px;
+}
+
+.detail.row:nth-child(even) {
+    background-color: #f2f2f2;
+}

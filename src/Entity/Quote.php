@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\QuoteRepository")
@@ -60,7 +61,8 @@ class Quote
     private $total;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\QuoteLineItem", mappedBy="quote", orphanRemoval=true)
+     * @Assert\Valid()
+     * @ORM\OneToMany(targetEntity="App\Entity\QuoteLineItem", mappedBy="quote", orphanRemoval=true, cascade={"all"})
      */
     private $quoteLineItems;
 
@@ -177,10 +179,9 @@ class Quote
     }
 
     /**
-     * @return Collection|QuoteLineItem[]
+     * @return \Doctrine\Common\Collections\Collection;
      */
-    public function getQuoteLineItems(): Collection
-    {
+    public function getQuoteLineItems(): Collection {
         return $this->quoteLineItems;
     }
 
@@ -208,8 +209,7 @@ class Quote
     }
 
     public function __toString() {
-        // TODO: Implement __toString() method.
-        return 'test';
+        return $this->getSubject();
     }
 
     public function getOwner(): ?User

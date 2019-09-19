@@ -1,0 +1,52 @@
+<script type="text/javascript">
+    // Récupère le div qui contient la collection de tags
+    var collectionHolderDetails = $('#details');
+    var addDetailButton = $("#addDetail");
+
+    jQuery(document).ready(function () {
+        var i = 0;
+
+       /* $(".detail").each(function () {
+            addDeleteButton(this);
+        });*/
+
+
+        addDetailButton.on('click', function (e) {
+            // empêche le lien de créer un « # » dans l'URL
+            e.preventDefault();
+
+            // ajoute un nouveau formulaire detail (voir le prochain bloc de code)
+            addTagForm(collectionHolderDetails, i, 'detail');
+            i++;
+        });
+
+    });
+
+
+    function addTagForm(collectionHolder, i, type) {
+        // Récupère l'élément ayant l'attribut data-prototype comme expliqué plus tôt
+        var prototype = collectionHolder.attr('data-prototype');
+
+        // Remplace '__name__' dans le HTML du prototype par un nombre basé sur
+        // la longueur de la collection courante
+        var newForm = prototype.replace(/__name__/g, collectionHolderDetails.children().first().children().length);
+        newForm = '<div id="' + type + i + '" class="detail row">' + newForm + '</div>';
+
+        // Affiche le formulaire dans la page dans un li, avant le lien "ajouter un tag"
+        var $newForm = collectionHolder.append(newForm);
+        //addDeleteButton($('#' + type + i));
+
+    }
+
+
+    function addDeleteButton($tag) {
+        var $delete = $('<button class="btn btn-delete">X</button>');
+        $($tag).children().first().append($delete);
+
+        $delete.on('click', function (e) {
+            // prevent the link from creating a "#" on the URL
+            e.preventDefault();
+        });
+
+    }
+</script>

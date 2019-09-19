@@ -1,4 +1,72 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+<div class="bg-white border p-3">
+
+    <h3>Quote details</h3>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group row">
+                {{ form_label(form.client, null, {'label_attr': {'class': 'col-sm-4 col-form-label text-right'}})}}
+                <div class="col-sm-8">{{ form_widget(form.client) }}</div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group row">
+                {{ form_label(form.owner, null, {'label_attr': {'class': 'col-sm-4 col-form-label text-right'}})}}
+                <div class="col-sm-8">{{ form_widget(form.owner) }}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group row">
+                {{ form_label(form.subject, null, {'label_attr': {'class': 'col-sm-4 col-form-label text-right'}})}}
+                <div class="col-sm-8">{{ form_widget(form.subject) }}</div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group row">
+                {{ form_label(form.status, null, {'label_attr': {'class': 'col-sm-4 col-form-label text-right'}})}}
+                <div class="col-sm-8">{{ form_widget(form.status) }}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group row">
+                {{ form_label(form.description, null, {'label_attr': {'class': 'col-sm-4 col-form-label text-right'}})}}
+                <div class="col-sm-8">{{ form_widget(form.description) }}</div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group row">
+                {{ form_label(form.validUntil, null, {'label_attr': {'class': 'col-sm-4 col-form-label text-right'}})}}
+                <div class="col-sm-8">{{ form_widget(form.validUntil) }}</div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <a href="{{ path('quote_index') }}">back to list</a>
+</div>
+
+<div class="bg-white border p-3 mt-4">
+    <h3>Quote items</h3>
+
+    {% import 'quote/form-template.html.twig' as IonaMarcro %}
+
+    <div id="details" data-prototype="{{ IonaMarcro.information_prototype(form.quoteLineItems.vars.prototype)|e }}">
+        {% for quoteLineItemForm in form.quoteLineItems %}
+            {{ IonaMarcro.information_prototype(quoteLineItemForm) }}
+        {% endfor %}
+    </div>
+
+    <a id="addDetail" href="#" class="btn btn-success btn-md">Add</a>
+</div>
+
+<button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
+

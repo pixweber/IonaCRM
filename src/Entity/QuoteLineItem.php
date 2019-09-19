@@ -143,8 +143,7 @@ class QuoteLineItem
     }
 
     public function __toString() {
-        // TODO: Implement __toString() method.
-        return 'test';
+        return $this->getProduct()->getProductName();
     }
 
 

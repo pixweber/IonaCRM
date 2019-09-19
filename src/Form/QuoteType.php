@@ -33,9 +33,15 @@ class QuoteType extends AbstractType
             ->add('subject')
             ->add('status')
             ->add('description')
-            ->add('subtotal', HiddenType::class)
-            ->add('adjustment', HiddenType::class)
-            ->add('total', HiddenType::class)
+            ->add('subtotal', HiddenType::class, array(
+                'data' => 0
+            ))
+            ->add('adjustment', HiddenType::class, array(
+                'data' => 0
+            ))
+            ->add('total', HiddenType::class, array(
+                'data' => 0
+            ))
             ->add('quoteLineItems', CollectionType::class, array(
                 'entry_type' => QuoteLineItemType::class,
                 'allow_add' => true,
