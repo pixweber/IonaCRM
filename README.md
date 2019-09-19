@@ -1,6 +1,6 @@
 # IonaCRM - A Simple & Straight CRM with Symfony 4
 
-IonaCRM is a Customer Relationship Management tool that aims to help to manage your business easily
+IonaCRM is a Customer Relationship Management tool that aims to help manage your business easily
 
 ## Features
 
