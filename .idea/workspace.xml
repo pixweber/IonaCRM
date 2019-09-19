@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b19b126b-fd92-4feb-9c5f-fcaa8a961ace" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/QuoteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/QuoteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/QuoteLineItemType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/QuoteLineItemType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/QuoteType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/QuoteType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/quote/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/quote/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/quote/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/quote/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/quote/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/quote/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/quote/form-template.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/quote/form-template.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/quote/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/quote/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/quote/quotes_javascripts.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/quote/quotes_javascripts.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/quote/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/quote/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/scripts.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/scripts.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,15 +19,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/product/edit.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/product/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
@@ -59,6 +26,18 @@
               <folding>
                 <element signature="e#12#26#0#Twig" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="504">
+                <caret line="41" column="46" lean-forward="true" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -229,7 +208,6 @@
         <option value="$PROJECT_DIR$/src/Entity/QuoteLineItem.php" />
         <option value="$PROJECT_DIR$/src/Entity/Quote.php" />
         <option value="$PROJECT_DIR$/Readme.md" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/templates/quote/show.html.twig" />
         <option value="$PROJECT_DIR$/templates/quote/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/quote/_delete_form.html.twig" />
@@ -255,6 +233,7 @@
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/templates/home/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/product/index.html.twig" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -370,7 +349,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/templating" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -502,12 +481,12 @@
       <workItem from="1568719752148" duration="45000" />
       <workItem from="1568739549789" duration="39118000" />
       <workItem from="1568887495909" duration="4736000" />
-      <workItem from="1568904588980" duration="7251000" />
+      <workItem from="1568904588980" duration="7554000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87910000" />
+    <option name="totallyTimeSpent" value="88213000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -516,10 +495,10 @@
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.27292112" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49733475" visible="true" weight="0.23293608" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49733475" weight="0.23293608" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5026652" side_tool="true" weight="0.23293608" />
-      <window_info anchor="bottom" id="Version Control" order="3" weight="0.32974428" />
+      <window_info anchor="bottom" id="Version Control" order="3" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="4" weight="0.32974428" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32936078" />
@@ -536,6 +515,32 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -563,16 +568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="127">
-            <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -975,6 +970,16 @@
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="504">
+            <caret line="41" column="46" lean-forward="true" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

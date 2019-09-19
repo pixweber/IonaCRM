@@ -37,3 +37,6 @@ Step 2: install project dependencies with Composer
 
 `cd IonaCRM`\
 `composer install`
+
+## Credits
+This CRM is developed by The Hau LE (pixweber)
