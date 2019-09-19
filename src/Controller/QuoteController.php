@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @Route("/quote")
+ * @Route("/quotes")
  */
 class QuoteController extends AbstractController
 {

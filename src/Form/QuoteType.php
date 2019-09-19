@@ -43,6 +43,9 @@ class QuoteType extends AbstractType
                 'data' => 0
             ))
             ->add('quoteLineItems', CollectionType::class, array(
+                'label_attr' => array(
+                    'class' => 'd-none'
+                ),
                 'entry_type' => QuoteLineItemType::class,
                 'allow_add' => true,
                 'allow_delete' => true,

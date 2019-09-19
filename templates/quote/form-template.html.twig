@@ -1,8 +1,20 @@
 {% macro information_prototype(quoteLineItemForm) %}
     <div class="detail row">
         <div class="col-sm-3">
-            {{ form_label(quoteLineItemForm.product, null)}}
-            {{ form_widget(quoteLineItemForm.product) }}
+            <div class="row">
+                <div class="col-sm-1 mt-5">
+                    <span class="line-item-delete text-danger" style="cursor: pointer">
+                        <i class="far fa-trash-alt"></i>
+                    </span>
+                </div>
+                <div class="col-sm-11">
+                    {{ form_label(quoteLineItemForm.product, null)}}
+                    {{ form_widget(quoteLineItemForm.product) }}
+                    <div class="mt-2">
+                        {{ form_widget(quoteLineItemForm.description) }}
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-sm-1">
             {{ form_label(quoteLineItemForm.price, null)}}
@@ -19,11 +31,6 @@
         <div class="col-sm-2">
             {{ form_label(quoteLineItemForm.discountAmount, null)}}
             {{ form_widget(quoteLineItemForm.discountAmount) }}
-        </div>
-
-        <div class="col-12 mt-2">
-            {{ form_label(quoteLineItemForm.description, null)}}
-            {{ form_widget(quoteLineItemForm.description) }}
         </div>
     </div>
 {% endmacro %}

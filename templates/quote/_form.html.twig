@@ -1,7 +1,8 @@
-{{ form_start(form) }}
+{{ form_start(form, {'attr': {'id': 'quote-form'}}) }}
 <div class="bg-white border p-3">
 
-    <h3>Quote details</h3>
+    <h4>Quote details</h4>
+    <hr class="mt-0" />
 
     <div class="row">
         <div class="col-sm-6">
@@ -47,14 +48,11 @@
             </div>
         </div>
     </div>
-
-
-
-    <a href="{{ path('quote_index') }}">back to list</a>
 </div>
 
 <div class="bg-white border p-3 mt-4">
-    <h3>Quote items</h3>
+    <h4>Quote items</h4>
+    <hr class="mt-0" />
 
     {% import 'quote/form-template.html.twig' as IonaMarcro %}
 
@@ -63,10 +61,11 @@
             {{ IonaMarcro.information_prototype(quoteLineItemForm) }}
         {% endfor %}
     </div>
-
-    <a id="addDetail" href="#" class="btn btn-success btn-md">Add</a>
 </div>
 
-<button class="btn">{{ button_label|default('Save') }}</button>
+<div class="mt-2">
+    <a id="addDetail" href="#" class="btn btn-success btn-md">Add product</a>
+</div>
+
 {{ form_end(form) }}
 

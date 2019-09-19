@@ -5,7 +5,9 @@
 {% block body %}
     <h1>Edit Contact</h1>
 
-    {{ include('contact/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="bg-white border p-3">
+        {{ include('contact/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
 
     <a href="{{ path('contact_index') }}">back to list</a>
 
